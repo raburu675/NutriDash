@@ -4,5 +4,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'), # Maps the root URL of the app to the 'index' view
+    path('', views.base, name='base'), # Maps the root URL of the app to the 'index' view
 ]

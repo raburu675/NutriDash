@@ -1,0 +1,15 @@
+/* when importting urls , it should come first  */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Define a custom font family */
+  --font-custom: "Libertinus Math", system-ui;
+
+  /* You can also override default font families */
+  /* --font-sans: "Your Font Name", var(--font-sans); */
+}
+
+/* Explicitly tell Tailwind to scan your Django app's templates */
+@source "./templates/myapp1/**/*.html"; 

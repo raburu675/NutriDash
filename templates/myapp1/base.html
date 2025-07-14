@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+     {% load static %}
+    <link href="{% static 'output.css' %}" rel="stylesheet">
+    <title>NutriDash</title>
+</head>
+<body>
+    <div class="relative w-full h-[100vh] flex justify-center items-center">
+        <div class="relative w-full h-[80vh] border border-black rounded-md mx-32 flex font-custom">
+            <!-- Sidebar -->
+            <Nav class="relative bg-black h-full text-white flex flex-col px-2 text-xs">                
+                    <h3 class="text-xl font-semibold text-center mt-4 mx-2 underline ">NutriDash</h3>
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="text-white flex flex-col w-full items-center h-48 mt-12 ">                        
+                            <div class="flex my-2">
+                                <!-- <img src="" class="h-8" alt="home icon" > -->
+                                <a href="" class="text-xs ">Home</a>                            
+                            </div>
+                            <div class="flex my-2">
+                                <!-- <img src="" class="h-8" alt="home icon" > -->
+                                <a href="" class="text-xs ">Overview</a>
+                            </div>       
+                            <div class="flex my-2">
+                                <!-- <img src="" class="h-8" alt="home icon" > -->
+                                <a href="" class="text-xs ">Reports & Analytics</a>
+                            </div>                                                                        
+                            <div class="flex my-2">
+                                <!-- <img src="" class="h-8" alt="home icon" > -->
+                                <a href="" class="text-xs ">Settings</a>
+                            </div>   
+                        </div>                                     
+                        <div class="text-white text-xs w-full items-center mb-12 flex flex-col items-center">
+                            <div class="border border-gray-100 w-2/3 my-4"></div>                                                                                                                            
+                            <a href="">Don Raburu</a>
+                            <a href="">Logout</a>      
+                        </div>        
+                    </div>                      
+            </Nav>
+
+            <!-- Home Page -->
+            <div class="flex flex-col w-full">
+                <div class="w-full flex justify-around text-sm py-4 bg-green-900">
+                <div class="flex justify-start items-center h-full w-1/2 ">
+                    <h2 class="text-xl mx-4 font-semibold">Dashboard</h2>
+                    <input class="mx-4 px-12 py-1 border rounded-md  border-gray-300 shadow-2xl text-xs" placeholder="Search"/>
+                </div>
+                <div class="flex justify-end w-1/2 h-full">
+                    <p class="">Dashboard Report</p>
+                    <p class="px-12">ACCOUNT</p>
+                </div>
+                </div>
+
+                <div class="relative flex w-full justify-between text-sm mt-4">
+                <div class="bg-red-400 w-1/2">
+                    <div class="flex justify-between font-semibold py-4">
+                    <h4>progress tracker</h4>
+                    <h4>Monthly</h4>
+                    </div>
+
+                    <div class=" flex w-full">
+                        <div class=" w-60 py-24 h-32 h-full bg-yellow-500 ">
+                            <img src="" alt="image"/>
+                            <h4>avg calories</h4>
+                        </div>
+                        <div class="flex flex-col items-center w-full justify-around">                            
+                            <h4>avg carbs</h4>
+                            <h4>avg proteins</h4>
+                        </div>
+                    </div>
+                </div> 
+
+                    <div class=" border border-gray-300 rounded-md">
+                        <div class="flex justify-between w-100 bg-red-400">
+                        <h2>Calories (KCL)</h2>
+                        <h4>Monthly</h4>
+                        </div>                    
+
+                        <div class="w-100 flex">
+                            <div class="border border-gray-300 h-32 my-2 rounded-md w-100">
+                                
+                            </div>
+
+                            <div class="w-24 flex flex-col justify-around mx-2">
+                                <h4>Breakfast </h4>
+                                <h4>Lunch</h4>
+                                <h4>Dinner</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="relative flex  my-2">
+                    <div>
+
+                    <div>
+                </div>
+
+                <div>
+                    <h4>Nutrition Overview for today</h4>
+                    <div class="flex flex-col justify-between">
+                        <p>calories</p>
+                        <p>proteins</p>
+                        <p>carbs</p>
+                    </div>
+                </div>
+
+                </div>
+                    </div>            
+                </div>
+            
+        </div>
+    </div>
+</body>
+</html>
