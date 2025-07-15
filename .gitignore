@@ -40,3 +40,5 @@ local_settings.py     # Local settings file, often contains sensitive data (e.g.
 *.bak                 # Backup files
 *.swp                 # Vim swap files
 *~                    # Emacs backup files
+node_modules
+node_modules
