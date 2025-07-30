@@ -1,0 +1,69 @@
+{% extends 'myapp1/base.html' %}
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+                <h4 class="py-2 font-semibold">Nutrition Overview for today</h4>
+                <div class="my-2 w-full my-2  border-bottom border-gray-200 flex py-2 bg-green-900">                        
+                    <!-- <div class="w-1/4 border border-gray-200s shadow-2xl">
+                        <h3>PieChart to display Nutrition Overview</h3>
+                    </div> -->
+                    <div class="flex flex-col justify-between border border-gray-200 shadow-2xl w-1/4 mx-4">
+                        <h4 class="text-sm">overview analytics for today</h4>
+                        <div class="flex">
+                            <img src="" alt="img" class="text-xs"/>
+                            <p class="text-xs">calories</p>
+                        </div>                            
+                        <div class="flex">
+                            <img src="" alt="img" class="text-xs"/>
+                            <p class="text-xs">proteins</p>
+                        </div>
+                        <div class="flex">
+                            <img src="" alt="img" class="text-xs"/>
+                            <p class="text-xs">carbs</p>
+                        </div>
+
+                        <button class="px-6 text-xs bg-green-900 text-white">start logging</button>
+                    </div>
+
+                    
+
+                    <div class="w-1/4 border border-gray-100 shadow-2xl py-4">
+                        <h3>steps for today</h3>
+                        <!-- add pie chart to show steps covered and left to reach goal -->
+                    </div>
+                </div>
+                
+                <div class="relative w-full flex  bg-green-900 justify-center py-2">                                            
+                        <!-- have a dataframe that holds and updates data based on user login -->
+                         <div class="">
+                            {{ plot_div | safe }} 
+                         </div>                                                                                                                                            
+                </div>
+
+                <div class="relative flex w-full justify-between text-sm pt-4 bg-">                    
+                    <div class="flex flex-col">
+                        <h2 class="text-lg">Recipes/Meals</h2>
+                        <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
+                            <h4 class="text-sm underline px-2">Chicken Alfredo</h4>
+                            <div class="flex mx-2 items-center">
+                                <p class="mx-2 text-xs">carb</p>
+                                <p class="mx-2 text-xs">fats</p>
+                                <p class="mx-2 text-xs">proteins</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
+                            <h4 class="text-sm underline px-2">Ugali Steak Kales </h4>
+                            <div class="flex mx-2 items-center">
+                                <p class="mx-2 text-xs">carb</p>
+                                <p class="mx-2 text-xs">fats</p>
+                                <p class="mx-2 text-xs">proteins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+
+
+            </div>
+{% endblock %}
