@@ -3,7 +3,7 @@
 
 {% block content %}
                 <h4 class="py-2 font-semibold">Nutrition Overview for today</h4>
-                <div class="my-2 w-full my-2  border-bottom border-gray-200 flex py-2 bg-green-900">                        
+                <div class="w-full  border-bottom border-gray-200 flex bg-green-900">                        
                     <!-- <div class="w-1/4 border border-gray-200s shadow-2xl">
                         <h3>PieChart to display Nutrition Overview</h3>
                     </div> -->
@@ -34,10 +34,8 @@
                 </div>
                 
                 <div class="relative w-full flex  bg-green-900 justify-center py-2">                                            
-                        <!-- have a dataframe that holds and updates data based on user login -->
-                         <div class="">
-                            {{ plot_div | safe }} 
-                         </div>                                                                                                                                            
+                        <!-- have a dataframe that holds and updates data based on user login -->                         
+                            {{ plot_div | safe }}                                                                                  
                 </div>
 
                 <div class="relative flex w-full justify-between text-sm pt-4 bg-">                    
