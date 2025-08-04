@@ -1,0 +1,20 @@
+{% extends 'myapp1/base.html' %}
+{% block title %} Account {% endblock %}
+
+{% block content %}
+<div className='relative w-full h-full flex justify-center bg-red-400'>
+        <!-- <img
+        src='https://images.pexels.com/photos/20218462/pexels-photo-20218462/free-photo-of-bmw-m5-competition.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        alt='bg '
+        className='absolute z-10 h-[100vh] w-full sm:hidden'
+        /> -->
+        <div class="border border-gray-300 rounded-md w-1/2">
+            <h1 class="font-semibold py-8 mb-4">Hello!</h1>
+            <h4 class="mt-6">Welcome, login if you already have an account or signup to create an account</h4>
+            <div class="flex flex-col w-full items-center">
+                <a href="{% url 'login' %}" class="px-6 w-1/4 my-2 bg-gray-700 py-1 text-sm border border-gray-100 rounded-md">LOGIN</a>
+                <a href="{% url 'signup' %}" class="px-6 w-1/4 my-2 bg-slate-900 py-1 text-sm border border-gray-100 rounded-md">SIGNUP</a>
+            </div>
+        </div>
+</div>
+{% endblock %}

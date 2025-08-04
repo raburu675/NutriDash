@@ -14,13 +14,13 @@ def home(request):
     df = pd.DataFrame(calorie_data)       
 
     # Create the Plotly bar chart
-    fig = px.bar(df, x='day', y='calories',width=400 ,height=200, title='calorie overview')     
+    fig = px.bar(df, x='day', y='calories',width=400 ,height=220, title='calorie overview')     
     # Reduce extra margins around the bars
     fig.update_layout(
         margin=dict(
-            l=10,  # left margin
-            r=20,  # right margin
-            t=50,  # top margin (leave some space for title if present)
+            l=100,  # left margin
+            r=100,  # right margin
+            t=60,  # top margin (leave some space for title if present)
             b=10   # bottom margin (leave some space for x-axis labels)
         )                
     )    
@@ -30,8 +30,21 @@ def home(request):
     context = {'plot_div':plot_div}
 
     # Render the home.html template, passing the context
-    return render(request, 'myapp1/home.html', context)
+    return render(request, 'myapp1/home.html', context)    
 
 def settings(request):
     #  Renders the settings page template located at templates/myapp1/settings.html.    
-    return render(request, 'myapp1/settings.html', {})
+    return render(request, 'myapp1/settings.html', {})   
+
+def analytics(request):
+    return render(request,'myapp1/analytics.html',{})
+
+def account(request):
+    return render(request,'myapp1/account.html')
+
+def login(request):
+    return render(request, 'myapp1/login.html')
+
+def signup(request):
+    return render(request, 'myapp1/signup.html')
+

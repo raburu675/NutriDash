@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="relative w-full h-[100vh] flex justify-center items-center">
-        <div class="relative w-full h-[80vh] border border-black rounded-md mx-32 flex font-custom text-white bg-green-900">
+        <div class="relative w-full h-[96vh] border border-black rounded-md mx-4 my-4 flex font-custom">
 
             <!-- Sidebar -->
             <Nav class="relative bg-black h-full text-white flex flex-col px-2 text-xs">                
@@ -31,7 +31,7 @@
 
                             <div class="flex my-2">
                                 <!-- <img src="" class="h-8" alt="home icon" > -->
-                                <a href="" class="text-xs hover:text-red-800">Reports & Analytics</a>
+                                <a href="{% url 'analytics' %}" class="text-xs hover:text-red-800">Reports & Analytics</a>
                             </div>                                                                        
                             <div class="flex my-2">
                                 <!-- <img src="" class="h-8" alt="home icon" > -->
@@ -55,7 +55,7 @@
                         </div>
                     <div class="flex justify-end w-1/2 h-full">
                         <p class="">Dashboard Report</p>
-                        <p class="px-12">ACCOUNT</p>
+                        <a href="{% url 'account' %}" class="px-12">ACCOUNT</a>
                     </div>
                     </div>
             

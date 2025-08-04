@@ -9,4 +9,8 @@ urlpatterns = [
     
     #Map the settings URL to the 'settings' view
     path('settings/', views.settings, name='settings'), 
+    path('account/' , views.account, name='account'),
+    path('analytics/' , views.analytics, name='analytics'),
+    path('signup/' , views.signup, name='signup'),
+    path('login/' , views.login, name='login'),
 ]

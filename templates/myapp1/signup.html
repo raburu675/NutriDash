@@ -1,0 +1,54 @@
+{% extends 'myapp1/base.html' %}
+{% block title %} signup page {% endblock %}
+
+{% block content %}
+<div>
+    <h2>WELCOME !</h2>
+    <h4>signup to create an account</h4>    
+    <form>
+        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
+            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Name</label>
+            <input
+            name='name'
+            autoComplete='off'
+                       
+            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
+            />
+            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+        </div>
+
+        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
+            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Email</label>
+            <input
+            name='name'
+            autoComplete='off'
+                      
+            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
+            />
+            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+        </div>
+
+        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
+            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Password</label>
+            <input
+            name='name'
+            autoComplete='off'
+                     
+            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
+            />
+            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+        </div>
+
+        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
+            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Confirm password</label>
+            <input
+            name='name'
+            autoComplete='off'
+            
+            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
+            />
+            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+        </div>
+    </form>
+</div>
+{% endblock %}
