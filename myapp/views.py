@@ -6,7 +6,7 @@ from plotly.offline import plot # Import plot from plotly.offline
 
 
 def home(request):
-    # Your data for the chart
+    # code for the bar chart
     calorie_data = {
         'day' : ['Mon','Tue','Wed','Thurs','Fri','Sat','Sun'],
         'calories' : [2000,3200,1800,2500,2100,3000,1990]
@@ -14,7 +14,7 @@ def home(request):
     df = pd.DataFrame(calorie_data)       
 
     # Create the Plotly bar chart
-    fig = px.bar(df, x='day', y='calories',width=400 ,height=220, title='calorie overview')     
+    fig = px.bar(df, x='day', y='calories',width=400 ,height=220, title='daily calorie overview')     
     # Reduce extra margins around the bars
     fig.update_layout(
         margin=dict(
@@ -22,15 +22,50 @@ def home(request):
             r=100,  # right margin
             t=60,  # top margin (leave some space for title if present)
             b=10   # bottom margin (leave some space for x-axis labels)
-        )                
+        ),
+        # paper_bgcolor='lightblue', # Set the background color to green                
     )    
 
     # Convert the Plotly figure to an HTML div string        
-    plot_div = fig.to_html(full_html=False, include_plotlyjs='cdn')    
-    context = {'plot_div':plot_div}
+    plot_div = fig.to_html(full_html=False, include_plotlyjs='cdn')        
+
+
+    # /////////////////////////////////////////////////////////////
+
+
+    # code for the pie chart-
+    #dataframe to hold the data
+    dailyIntake_data = ({
+        'foodType' : ['calories','proteins','carbs'],
+        'intake' : [1200,2300,1100]
+    })
+    df_pie = pd.DataFrame(dailyIntake_data)
+
+    #create a pie chart figure to display the proportions of the daily food intake
+    fig_pie = px.pie(df_pie , names='foodType' ,values='intake',title='food intake pie chart', hole=0.6)
+    # Use update_layout to set a smaller width and height for the chart
+    fig_pie.update_layout(
+        width=400,  # Set the width to 400 pixels
+        height=250, # Set the height to 400 pixels
+        margin=dict(t=40, b=20, l=20, r=20), # Reduce the top, bottom, left, and right margins
+        # paper_bgcolor='lightgreen', # Set the background color to green
+        title={'x':0.5, 'xanchor': 'center'} # Center the title
+    )
+    #update the traces to display lables and percentages
+    fig_pie.update_traces(textposition='inside' , textinfo='label+percent+value')
+
+    # Convert the pie chart to an HTML div
+    pie_chart_div = fig_pie.to_html(full_html=False, include_plotlyjs='cdn')
+
+    context = {
+        'plot_div':plot_div,
+        'pie_chart_div': pie_chart_div
+        }
 
     # Render the home.html template, passing the context
     return render(request, 'myapp1/home.html', context)    
+
+
 
 def settings(request):
     #  Renders the settings page template located at templates/myapp1/settings.html.    

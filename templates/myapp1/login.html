@@ -2,6 +2,28 @@
 {% block title %} login page {% endblock %}
 
 {% block content %}
-<h1>login page</h1>
+<div class="w-full font-custom">    
+    <div class="relative w-full flex justify-center h-full items-center">
+        <form class="w-1/2 flex flex-col items-cente px-6">
+            <div class="w-full text-center mt-20 pb-6">
+                <h2 class="text-xl font-bold">WELCOME !</h2>
+                <h4 class="text-lg font-semibold">Enter you details to login to your account</h4>
+            </div>   
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Email</label>
+                <input type="text" placeholder="email" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />     
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>
 
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Password</label>
+                <input type="text" placeholder="password" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>            
+            <div class="w-full flex justify-center pb-12">
+                <button class="px-6 py-1 border border-gray-200 rounded-md text-xs text-white bg-black">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

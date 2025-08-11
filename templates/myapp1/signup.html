@@ -2,53 +2,41 @@
 {% block title %} signup page {% endblock %}
 
 {% block content %}
-<div>
-    <h2>WELCOME !</h2>
-    <h4>signup to create an account</h4>    
-    <form>
-        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
-            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Name</label>
-            <input
-            name='name'
-            autoComplete='off'
-                       
-            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
-            />
-            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
-        </div>
+<div class="w-full font-custom">    
+    <div class="relative w-full flex justify-center h-full items-center">
+        <form class="w-1/2 flex flex-col items-cente px-6">
+            <div class="w-full text-center mt-20 pb-6">
+                <h2 class="text-xl font-bold">WELCOME !</h2>
+                <h4 class="text-lg font-semibold">signup to create an account</h4>
+            </div>   
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Full name</label>
+                <input type="text" placeholder="Full name" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />     
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>
 
-        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
-            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Email</label>
-            <input
-            name='name'
-            autoComplete='off'
-                      
-            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
-            />
-            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
-        </div>
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Email</label>
+                <input type="text" placeholder="email" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>
 
-        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
-            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Password</label>
-            <input
-            name='name'
-            autoComplete='off'
-                     
-            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
-            />
-            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
-        </div>
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Password</label>
+                <input type="text" placeholder="password" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />            
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>
 
-        <div className='relative flex  flex-col my-2 font-vollkorn sm:w-2/5 '>
-            <label className='text-xs sm:text-sm text-white px-1 sm:text-yellow-800 '>Confirm password</label>
-            <input
-            name='name'
-            autoComplete='off'
-            
-            className='relative border-b border-gray-400 h-10 sm:py-0 focus:border-green-700 outline-none bg-white opacity-40 border rounded-lg px-2 sm:bg-black sm:border-yellow-800 sm:text-white'
-            />
-            <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
-        </div>
-    </form>
+            <div class='flex flex-col py-2'>
+                <label for="name text-xs">Confirm Password</label>
+                <input type="text" placeholder="confirm password" class="w-1/2 py-1 text-sm border border-gray-200 rounded-md focus:outline-none" />         
+                <!-- {error && !name && <p className='text-red-700 pl-4 text-center font-semibold'>Field is required</p>} -->
+            </div>
+
+            <div class="w-full flex justify-center pb-12">
+                <button class="px-6 py-1 border border-gray-200 rounded-md text-xs text-white bg-black">submit</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
