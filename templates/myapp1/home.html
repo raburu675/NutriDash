@@ -3,42 +3,61 @@
 
 {% block content %}                
                                                                                                                   
-                        <div class="relative flex w-full justify-around bg-green-800">
-                                <div class="relative flex justify-center border border-gray-200">                                            
-                                    <!-- have a dataframe that holds and updates data based on user login -->                         
-                                        {{ plot_div | safe }}                                                                                  
+                        <div class="relative flex w-full justify-around font-custom h-full">
+                                <div class="flex flex-col py-2 my-4  mx-2 border border-gray-100 rounded-md shadow-2xl">
+                                    <h2 class="py-2 font-semibold">Calories (kcal)</h2>
+                                    <div class="relative flex justify-center">                                            
+                                        <!-- have a dataframe that holds and updates data based on user login -->                         
+                                            {{ plot_div | safe }}                                                                                  
+                                    </div>
                                 </div>
 
-                                <div class="flex w-24 mt-12">
-                                    <div class="w-1/3 border-r-2 border-gray-200">
-                                        <img src="" alt="icons"/>
-                                        <h4>average calories</h4>
-                                        <p>1200</p>
-                                    </div>
+                                                       
+                        
 
-                                    <div class="w-1/3 border-r-2">
-                                        <img src="" alt="icons"/>
-                                        <h4>average calories</h4>
-                                        <p>1200</p>
-                                    </div>
+                        <div class="relative flex flex-col w-full justify-between">
+                                <div class="relative mt-4  border border-gray-200  mx-2 shadow-2xl rounded-md">
+                                    <h2 class="font-semibold py-4">Progress tracker</h2>
+                                    <div class="flex w-full h-32 border border-gray-300 ">
 
-                                    <div class="w-1/3 border-r-2">
-                                        <img src="" alt="icons"/>
-                                        <h4>average calories</h4>
-                                        <p>1200</p>
-                                    </div>
-                                </div>                               
-                        </div>
+                                        <div class="w-1/3 border-r-2 border-black flex flex-col justify-between">
+                                            <img src="" alt="icons" />
+                                            <div>
+                                                <h4>average calories</h4>
+                                                <p>1200</p>
+                                            </div>
+                                        </div>
 
-                        <div class="relative flex w-full justify-around">
-                            <div class="relative border border-gray-200">
-                                {{ pie_chart_div|safe }}
-                                <div class="w-full flex justify-center my-4">
-                                   <button class="px-6 rounded-md text-xs bg-black py-2 text-white">start logging</button>
+                                        <div class="w-1/3 border-r-2 border-black flex flex-col justify-between">
+                                            <img src="" alt="icons"/>
+                                            <div>
+                                                <h4>average calories</h4>
+                                                <p>1200</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/3 flex flex-col justify-between">
+                                            <img src="" alt="icons"/>
+                                            <div >
+                                                <h4>average calories</h4>
+                                                <p>1200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>        
+
+
+                            <div class="relative flex border border-gray-200 mx-4 my-4 shadow-2xl rounded-md">
+                                <div class="relative shadow-2xl rounded-md ">
+                                    <h2 class="font-semibold py-1">Food intake</h2>
+                                    {{ pie_chart_div|safe }}
+                                    <div class="w-full flex justify-center my-4">
+                                    <button class="px-4 rounded-md text-xs bg-black py-1 text-white">start logging</button>
+                                    </div>
                                 </div>
-                            </div>
 
-                             <div class="relative flex w-24 justify-between text-sm pt-4 ">                    
+                                
+                                <div class="relative flex justify-between text-sm pt-4">                    
                                     <div class="flex flex-col">
                                         <h2 class="text-lg">Recipes/Meals</h2>
 
@@ -52,14 +71,12 @@
                                         </div>
 
                                         <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
-                                        <h4 class="text-sm underline px-2">Ugali Steak Kales </h4>
-                                        <div class="flex mx-2 items-center">
-                                            <p class="mx-2 text-xs">carb</p>
-                                            <p class="mx-2 text-xs">fats</p>
-                                            <p class="mx-2 text-xs">proteins</p>
-                                        </div>                            
-
-                                        
+                                            <h4 class="text-sm underline px-2">Ugali Steak Kales </h4>
+                                            <div class="flex mx-2 items-center">
+                                                <p class="mx-2 text-xs">carb</p>
+                                                <p class="mx-2 text-xs">fats</p>
+                                                <p class="mx-2 text-xs">proteins</p>
+                                            </div>                                                                    
                                     </div>
                                     <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
                                         <h4 class="text-sm underline px-2">Rice Steak Guacamoli </h4>
@@ -67,27 +84,14 @@
                                             <p class="mx-2 text-xs">carb</p>
                                             <p class="mx-2 text-xs">fats</p>
                                             <p class="mx-2 text-xs">proteins</p>
-                                    </div>
-                                
-                                    </div>
-                                    <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
-                                        <h4 class="text-sm underline px-2">Ugali Pork Spinach Avocado </h4>
-                                        <div class="flex mx-2 items-center">
-                                            <p class="mx-2 text-xs">carb</p>
-                                            <p class="mx-2 text-xs">fats</p>
-                                            <p class="mx-2 text-xs">proteins</p>
-                                    </div>
-                            
-                                   </div>         
-                                    <div class="border border-gray-200 py-1 px-6 flex font-semibold items-center">
-                                        <h4 class="text-sm underline px-2">Chapati beans </h4>
-                                        <div class="flex mx-2 items-center">
-                                            <p class="mx-2 text-xs">carb</p>
-                                            <p class="mx-2 text-xs">fats</p>
-                                            <p class="mx-2 text-xs">proteins</p>
-                                    </div>
+                                    </div>                                
+                                </div>
 
+
+                            </div>
+                                                                 
                         </div>                                                                                                                                                                                                
-                    </div>                                                                                                                                       
+                    </div>      
+                    </div>                                                                                                                                 
             
 {% endblock %}

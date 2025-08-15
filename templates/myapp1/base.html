@@ -47,20 +47,20 @@
             </Nav>
 
             <!-- Main section -->
-            <div class="flex flex-col w-full  ">
-                    <div class="w-full flex justify-around text-sm py-4 bg-green-900 text-white">
+            <div class="flex flex-col w-full">
+                    <div class="w-full flex justify-around text-sm py-4 bg-green-900 text-white border-b border-black">
                         <div class="flex justify-start items-center h-full w-1/2 ">
                             <h2 class="text-xl mx-4 font-semibold">Dashboard</h2>
                             <input class="mx-4 px-12 py-1 border rounded-md  border-gray-300 shadow-2xl text-xs" placeholder="Search"/>
                         </div>
                     <div class="flex justify-end w-1/2 h-full">
-                        <p class="">Dashboard Report</p>
+                        <p class="">Download Report</p>
                         <a href="{% url 'account' %}" class="px-12">ACCOUNT</a>
                     </div>
                     </div>
             
                     <!-- main content  -->
-                    <main class="relative ">
+                    <main class="relative h-full">
                         {% block content %}
                         {% endblock %}
                     </main>

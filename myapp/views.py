@@ -14,23 +14,23 @@ def home(request):
     df = pd.DataFrame(calorie_data)       
 
     # Create the Plotly bar chart
-    fig = px.bar(df, x='day', y='calories',width=400 ,height=220, title='daily calorie overview')     
+    fig = px.bar(df, x='day', y='calories',width=450 ,height=450, title='daily calorie overview')     
     # Reduce extra margins around the bars
     fig.update_layout(
         margin=dict(
-            l=100,  # left margin
-            r=100,  # right margin
-            t=60,  # top margin (leave some space for title if present)
+            l=60,  # left margin
+            r=60,  # right margin
+            t=40,  # top margin (leave some space for title if present)
             b=10   # bottom margin (leave some space for x-axis labels)
         ),
-        # paper_bgcolor='lightblue', # Set the background color to green                
+        paper_bgcolor='rgba(0,0,0,0)', # Set the paper background to transparent                
     )    
 
     # Convert the Plotly figure to an HTML div string        
     plot_div = fig.to_html(full_html=False, include_plotlyjs='cdn')        
 
 
-    # /////////////////////////////////////////////////////////////
+    
 
 
     # code for the pie chart-
@@ -42,13 +42,13 @@ def home(request):
     df_pie = pd.DataFrame(dailyIntake_data)
 
     #create a pie chart figure to display the proportions of the daily food intake
-    fig_pie = px.pie(df_pie , names='foodType' ,values='intake',title='food intake pie chart', hole=0.6)
+    fig_pie = px.pie(df_pie , names='foodType' ,values='intake', hole=0.6)
     # Use update_layout to set a smaller width and height for the chart
     fig_pie.update_layout(
-        width=400,  # Set the width to 400 pixels
-        height=250, # Set the height to 400 pixels
-        margin=dict(t=40, b=20, l=20, r=20), # Reduce the top, bottom, left, and right margins
-        # paper_bgcolor='lightgreen', # Set the background color to green
+        width=350,  # Set the width to 400 pixels
+        height=200, # Set the height to 400 pixels
+        margin=dict(t=30, b=20, l=10, r=10), # Reduce the top, bottom, left, and right margins
+        paper_bgcolor='rgba(0,0,0,0)', # Set the paper background to transparent
         title={'x':0.5, 'xanchor': 'center'} # Center the title
     )
     #update the traces to display lables and percentages
