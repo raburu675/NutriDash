@@ -2,5 +2,13 @@
 {% block title %}Reports and Analytics {% endblock %}
 
 {% block content %}
-<h2>Reports and Analytics</h2>
+<div class="relative flex h-full w-full">
+             
+    <div class="border border-gray-200 shadow-2xl mx-2 my-4 rounded-md">        
+        {{melted_chart_div | safe}}
+    </div>
+    <div class="border border-gray-200 shadow-2xl mx-2 my-4 rounded-md">        
+        {{weight_div | safe}}
+    </div>
+</div>
 {% endblock %}

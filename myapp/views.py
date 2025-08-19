@@ -30,9 +30,6 @@ def home(request):
     plot_div = fig.to_html(full_html=False, include_plotlyjs='cdn')        
 
 
-    
-
-
     # code for the pie chart-
     #dataframe to hold the data
     dailyIntake_data = ({
@@ -42,7 +39,7 @@ def home(request):
     df_pie = pd.DataFrame(dailyIntake_data)
 
     #create a pie chart figure to display the proportions of the daily food intake
-    fig_pie = px.pie(df_pie , names='foodType' ,values='intake', hole=0.6)
+    fig_pie = px.pie(df_pie , names='foodType' ,values='intake', hole=0.4)
     # Use update_layout to set a smaller width and height for the chart
     fig_pie.update_layout(
         width=350,  # Set the width to 400 pixels
@@ -71,8 +68,107 @@ def settings(request):
     #  Renders the settings page template located at templates/myapp1/settings.html.    
     return render(request, 'myapp1/settings.html', {})   
 
+
+
 def analytics(request):
-    return render(request,'myapp1/analytics.html',{})
+
+    #dataframe to show daily calorie intake againsta target
+    calorie_intake = {
+        'days': ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        'calories':  [2100,2300,1950,1700,1900,2250,2134]
+    }
+    df = pd.DataFrame(calorie_intake)
+
+    #define the daily calorie target
+    calorie_target = 2170
+    df['calorie_target'] = calorie_target
+
+    # use pd.melt() to change the data from a wide format to a long format and combine the charts on the y axis to show intake and target
+    #This is useful when you have one or more columns that act as identifier variables (id_vars) and other columns that contain values you want to stack into a single column (value_vars).
+    df_melted = pd.melt(df, id_vars=['days'], value_vars=['calories', 'calorie_target'], var_name='line_type' ,value_name='value')
+    #create the plotly line using the px.line
+    fig = px.line(
+        df_melted,
+        x='days', 
+        y='value', 
+        color='line_type', # Differentiate lines by color
+        line_shape='spline', # Creates a smooth line for the trend    
+        title='Weekly Calorie Intake vs. Target',
+        color_discrete_map={
+            'calories': '#4285F4',
+            'calorie_target': '#DB4437'
+            }
+    )
+
+    #Customize the layout
+    fig.update_layout(
+        width = 600,
+        height = 450,
+        title={
+            'text': 'Weekly Calorie Intake vs. Target',
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'
+        },
+        xaxis_title='Day of the Week',
+        yaxis_title='Calories (kcal)',
+        font=dict(
+            family="Inter, sans-serif",
+            size=12,
+            color="#333"
+        ),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=20, r=20, t=40, b=40),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1,
+            title=None
+        )
+    )
+
+    #Data to show weight tracker
+    weight = {
+    'Months' : ['January','Feburary','March','April','May','June','JUly','August','September','October','November','December'],
+    'weight_kg' : [74.5, 72.1, 65.3, 68, 69.8, 72.1, 70.5, 67.1, 71.3, 73.7, 73.8, 74.1]
+    }
+
+    weight_df = pd.DataFrame(weight)
+    #create the area chart using px.area
+    fig_weight = px.area(
+        weight_df,
+        x='Months',
+        y='weight_kg',
+        title='weight tracker',
+        labels={'weight_kg': 'Weight (kg)', 'day': 'Day of the Week'},
+        line_shape='spline'
+    )
+    fig_weight.update_yaxes(range=[55, 76])
+    fig_weight.update_layout(
+        width = 600,
+        height = 450,
+        margin=dict(l=20, r=20, t=40, b=20),
+    )
+
+    melted_chart_div = fig.to_html(full_html=False, include_plotlyjs='cdn')
+    weight_div = fig_weight.to_html(full_html=False, include_plotlyjs='cdn')
+
+    context = {
+        'melted_chart_div' : melted_chart_div,
+        'weight_div' : weight_div
+    }
+
+    return render(request,'myapp1/analytics.html', context)
+
+
+
+
+
+
 
 def account(request):
     return render(request,'myapp1/account.html')
