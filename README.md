@@ -1,0 +1,1 @@
+NUtriDash, a simple and intuitive app designed to help you track your daily nutritional intake and stay on top of your health goals. With NUtriDash, you can easily log your meals, view detailed nutritional information, and get a clear overview of your diet.
